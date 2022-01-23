@@ -5,14 +5,17 @@
 @font-face {
     font-family: font-heavy;
     src: url(fonts/DrukCyr-Heavy.woff2);
+    font-display: swap;
 }
 @font-face {
     font-family: font-medium;
     src: url(fonts/DrukCyr-Medium.woff2);
+    font-display: swap;
 }
 @font-face {
     font-family: carmem;
     src: url(fonts/CarmenSans-Regular.woff2);
+    font-display: swap;
 }
 
 *{
