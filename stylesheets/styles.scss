@@ -81,7 +81,7 @@ div.container{
 }
 
 #section1{        
-    @include mixins.section-bg-img('background-section-1.png');
+    @include mixins.section-bg-img('background-section-1.webp');
     height:20em;         
     div{
         display: flex;
@@ -124,7 +124,7 @@ div.container{
     }
     .col-2{
         .carro{
-            @include mixins.img('carro.png');            
+            @include mixins.img('carro.webp');            
             position: relative;
             top: -4em;
             left: -4em;
@@ -300,27 +300,27 @@ div.container{
         height: 4rem;
     }    
     .img-1{        
-        @include mixins.img('higienizacao.png');        
+        @include mixins.img('higienizacao.webp');        
     }
     .img-2{        
-        @include mixins.img('polimento.png');        
+        @include mixins.img('polimento.webp');        
     }
     .img-3{        
-        @include mixins.img('cristalizacao.png');        
+        @include mixins.img('cristalizacao.webp');        
     }
     .img-4{        
-        @include mixins.img('revitalizacao.png');        
+        @include mixins.img('revitalizacao.webp');        
     }
     .img-5{        
-        @include mixins.img('estofados.png');        
+        @include mixins.img('estofados.webp');        
     }
     .img-6{        
-        @include mixins.img('snow.png');        
+        @include mixins.img('snow.webp');        
     }    
 }
 
 #section4{    
-    @include mixins.section-bg-img('fundo-branco-amarelo.png');
+    @include mixins.section-bg-img('fundo-branco-amarelo.webp');
     div{
         display: flex;
         flex-direction: row;
@@ -378,7 +378,7 @@ div.container{
 
     }
     div.col-right{
-        @include mixins.img('mapa.png');
+        @include mixins.img('mapa.webp');
         position: relative;
         bottom: 7em;        
         width: 500px;
@@ -444,7 +444,7 @@ footer{
         }        
     }
     a.logo{
-        @include mixins.img('logo-white.png');                        
+        @include mixins.img('logo-white.webp');                        
         display: block;
         margin: 0;
         text-indent: -9999px;
