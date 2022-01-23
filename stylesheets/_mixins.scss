@@ -1,0 +1,48 @@
+@use 'variables';
+
+@mixin tablet{
+    @media screen and (max-width: 810px){
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media screen and (max-width: 767px){
+        @content;
+    }
+}
+
+@mixin sm-monitor{
+    @media screen and (max-width: 1194px){
+        @content;
+    }
+}
+
+@mixin container{
+    max-width: variables.$content-width;
+    padding: 1.5rem 0;
+    margin: 0;
+    display: flex;        
+    margin: 0 auto;
+    @include sm-monitor{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @include mobile{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@mixin section-bg-img($img){
+    background: url('../img/#{$img}') no-repeat;
+    background-size: cover;    
+    background-position: center;    
+}
+
+@mixin img($img){
+    background: url('../img/#{$img}') no-repeat;
+    background-size: contain;    
+    background-position: center;        
+}

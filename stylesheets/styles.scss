@@ -1,0 +1,478 @@
+@use 'mixins';
+@use 'variables';
+
+
+@font-face {
+    font-family: font-heavy;
+    src: url(fonts/DrukCyr-Heavy.woff2);
+}
+@font-face {
+    font-family: font-medium;
+    src: url(fonts/DrukCyr-Medium.woff2);
+}
+@font-face {
+    font-family: carmem;
+    src: url(fonts/CarmenSans-Regular.woff2);
+}
+
+*{
+    font-family: carmem;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    h1{
+        font-family: font-heavy;        
+        span{
+            font-family: font-heavy;        
+        }
+        font-size: 5rem;
+        text-transform: uppercase;
+        @include mixins.mobile{
+            font-size: 4rem;
+        }
+    }
+    h2{
+        font-size: 2.5rem;
+        font-family: font-heavy;
+        text-transform: uppercase;                
+        font-weight: 800;
+        span{            
+            font-family: font-heavy;        
+        }
+        @include mixins.mobile{
+            font-size: 2rem;
+        }
+    }
+    h3{
+        font-size: 1.3rem;
+        font-family: font-medium;
+        text-transform: uppercase;        
+        span{            
+            font-family: font-medium;        
+        }
+    }
+    h5{
+        font-size: .7rem;        
+        text-transform: uppercase;                
+    }
+}
+
+body{
+    background-color: variables.$background-color;    
+}
+
+section{
+    @include mixins.container;        
+}
+
+.primary-color{
+    color: variables.$primary-color;
+}
+.secondary-color{
+    color: variables.$secondary-color;
+}
+
+div.container{
+    margin-left: auto;                        
+    margin-right: auto;                        
+}
+
+#section1{        
+    @include mixins.section-bg-img('background-section-1.png');
+    height:20em;         
+    div{
+        display: flex;
+        flex-direction: row;        
+        @include mixins.mobile{
+            display: flex;
+            flex-direction: column;               
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }   
+    
+    h1{
+        
+        @include mixins.tablet{
+            width: 5em;
+            margin-left: .5em;
+        }    
+        @include mixins.mobile{            
+            margin: 0;            
+        }    
+    }
+    h3{
+        word-spacing: .4rem;
+        letter-spacing: .5rem;
+        font-weight: 100;
+        @include mixins.tablet{            
+            margin-left: 2.1em;
+        }    
+        @include mixins.mobile{            
+            margin: 0;
+            font-size: 1.2rem;
+        }    
+    }
+    .col-1{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;        
+    }
+    .col-2{
+        .carro{
+            @include mixins.img('carro.png');            
+            position: relative;
+            top: -4em;
+            left: -4em;
+            width: 400px;
+            height: 400px;
+            @include mixins.tablet{
+                width: 20.5rem;
+                height: 20.5rem;
+                top: -1em;
+                left: -4em;
+            }
+            @include mixins.mobile{
+                position: inherit;
+                margin: 0 auto;
+                margin-top: -5em;
+            }
+        }
+        
+    }
+    
+}
+
+#section2{
+    background-color: variables.$secondary-color;
+    display: flex;
+    flex-direction: column;
+    div.header{        
+        display: flex;        
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 2em;
+    }
+    
+    div.container{
+        display: flex;
+        flex-direction: row;                
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        @include mixins.sm-monitor{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;            
+        }
+        @include mixins.mobile{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;            
+            text-align: justify;
+        }
+        div{
+            width: 36em;
+            @include mixins.mobile{
+                width: 20em;
+            }
+        }
+        div.left{            
+            padding-left: 13rem;
+            margin: 0;
+            p{                
+                font-size: 1rem;                
+                @include mixins.mobile{
+                    font-size: .7rem;
+                }
+            }            
+            @include mixins.sm-monitor{
+                padding-left: 0;
+                padding-top: 1em;
+                margin: 0 auto;                
+            }
+        }
+        div.right{            
+            display: flex;
+            vertical-align: center;
+            padding-top: 1em;            
+            padding-left: 1em;
+            iframe{
+                width: 450px;
+                height: 250px;
+                margin: 0 auto;
+                @include mixins.mobile{
+                    width: 250px;
+                    height: 150px;
+                    margin-bottom: 2em;
+                }
+            }
+        }
+    }        
+}
+
+#section3{
+    div.container{
+        display: flex;
+        flex-direction: row;                
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        @include mixins.mobile{            
+            margin-top: 2em;
+        }    
+    }    
+    div.content{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;        
+        width: 20em;
+        @include mixins.sm-monitor{
+            width: 15em;
+        }        
+        @include mixins.tablet{
+            display: flex;
+            flex-direction: column;                        
+        }        
+
+    }
+    div.service{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;        
+        vertical-align: middle;
+        justify-content: center;
+        padding-bottom: 1.5em;
+    }    
+    div.text{
+        width: 12em;
+        text-align: center;
+        
+    }    
+    div.col-left{
+        padding-left: 13em; 
+        @include mixins.sm-monitor{
+            padding-left: 0;
+            padding: 0 auto;            
+            margin: 0 auto;
+        }       
+        @include mixins.tablet{            
+            padding-left: 0;
+        }        
+    }
+    div.col-right{
+        padding-right: 13em;        
+        @include mixins.sm-monitor{
+            padding: 0 auto;            
+            padding-right: 0;
+            margin: 0 auto;
+        }       
+        @include mixins.tablet{            
+            padding-right: 0;            
+        }        
+    }
+    p{
+        font-size: .7rem;
+    }
+    .img{
+        width: 4rem;
+        height: 4rem;
+    }    
+    .img-1{        
+        @include mixins.img('higienizacao.png');        
+    }
+    .img-2{        
+        @include mixins.img('polimento.png');        
+    }
+    .img-3{        
+        @include mixins.img('cristalizacao.png');        
+    }
+    .img-4{        
+        @include mixins.img('revitalizacao.png');        
+    }
+    .img-5{        
+        @include mixins.img('estofados.png');        
+    }
+    .img-6{        
+        @include mixins.img('snow.png');        
+    }    
+}
+
+#section4{    
+    @include mixins.section-bg-img('fundo-branco-amarelo.png');
+    div{
+        display: flex;
+        flex-direction: row;
+        @include mixins.tablet{
+            text-align: center;            
+        }     
+    }
+    height: 20em;
+    @include mixins.mobile{
+        height: 16em;
+        padding-top: 2em;
+    }     
+    div.content{
+        display: flex;
+        flex-direction: column;   
+        @include mixins.tablet{
+            margin-left: 1em;
+        }     
+    }
+    div.col-left{
+        width:50%;  
+        h2{
+            width: 7em;            
+            line-height: 2.5rem;        
+            margin-top: 1em;
+            @include mixins.mobile{
+                text-align: center;            
+                line-height: 2rem;
+            }     
+        }
+        button{            
+            margin: 0;
+            @include mixins.tablet{
+                margin: 0 auto;
+                margin-top: 1em;
+            }
+            margin-top: 1em;
+            background-color: variables.$terciary-color;
+            color: variables.$secondary-color;
+            padding: .8em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            width: 12em;
+            border: none;
+            border-radius: 5px;
+            font-size: .8rem;
+
+            &:hover{
+                background-color: variables.$primary-color;
+                color: variables.$terciary-color;
+            }
+        }
+
+    }
+    div.col-right{
+        @include mixins.img('mapa.png');
+        position: relative;
+        bottom: 7em;        
+        width: 500px;
+        height: 500px;  
+        @include mixins.tablet{
+            bottom: 6em;        
+            width: 29em;
+            height: 29em;  
+        }
+        @include mixins.mobile{
+            display: none;
+        }  
+    }
+}
+
+footer{
+    @include mixins.container;
+    display: flex;
+    flex-direction: row;
+    background-color: variables.$footer-bg-color;
+    align-items: center;
+    justify-content: center;    
+    flex-wrap: wrap;
+
+    a{
+        text-decoration: none;
+        color: variables.$terciary-color;
+        font-size: .6rem;    
+        display: flex;
+        flex-direction: row;
+        vertical-align: middle;        
+        line-height: 3rem;
+        font-weight: bold;        
+    }
+    div.container{
+        margin: 0 auto;
+        @include mixins.sm-monitor{
+            margin: 0;
+        }
+        display: flex;
+        flex-direction: row;
+        vertical-align: middle;
+        flex-wrap: wrap;
+        img{
+            width: 50px;
+            height: 50px;
+        }
+
+        @include mixins.mobile{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;            
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+    div.col{
+        margin-top: 1.5em;        
+        @include mixins.tablet{
+            display: block;            
+            margin: 0 auto;
+        }        
+    }
+    a.logo{
+        @include mixins.img('logo-white.png');                        
+        display: block;
+        margin: 0;
+        text-indent: -9999px;
+        width: 200px;
+        height: 100px;
+        background-size: cover;                        
+    }
+    div.col-1{        
+        @include mixins.tablet{
+            display: none;
+        }
+    }
+    div.col-2{
+        margin-left: 2em;
+        width: 9em;
+        @include mixins.mobile{            
+            width: 100%;
+            margin: 0;
+            margin-top: 1em;
+        }
+    }
+    div.col-3{
+        width: 10em;
+        @include mixins.mobile{
+            width: 100%;
+        }
+    }    
+    div.col-4{        
+        width: 20em;
+        @include mixins.mobile{
+            width: 100%;
+        }
+        @include mixins.sm-monitor{
+            width: auto;
+        }
+    }    
+    div.col-5{        
+        display: none;
+        @include mixins.tablet{
+            display: block;            
+            margin: 0 auto;
+        }        
+    }
+}
