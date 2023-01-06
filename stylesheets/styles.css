@@ -1,17 +1,20 @@
 @font-face {
   font-family: font-heavy;
   src: url(fonts/DrukCyr-Heavy.woff2);
+  font-display: swap;
 }
 @font-face {
   font-family: font-medium;
   src: url(fonts/DrukCyr-Medium.woff2);
+  font-display: swap;
 }
 @font-face {
   font-family: carmem;
   src: url(fonts/CarmenSans-Regular.woff2);
+  font-display: swap;
 }
 * {
-  font-family: carmem;
+  font-family: Arial, Helvetica, sans-serif, carmem;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -95,7 +98,7 @@ div.container {
 }
 
 #section1 {
-  background: url("../img/background-section-1.png") no-repeat;
+  background: url("../img/background-section-1.webp") no-repeat;
   background-size: cover;
   background-position: center;
   height: 20em;
@@ -146,7 +149,7 @@ div.container {
   margin-top: 2em;
 }
 #section1 .col-2 .carro {
-  background: url("../img/carro.png") no-repeat;
+  background: url("../img/carro.webp") no-repeat;
   background-size: contain;
   background-position: center;
   position: relative;
@@ -253,6 +256,18 @@ div.container {
     margin-bottom: 2em;
   }
 }
+#section2 div.container div.right .iframe, #section2 div.container div.right .youtube, #section2 div.container div.right .wrapper {
+  width: 450px;
+  height: 250px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  #section2 div.container div.right .iframe, #section2 div.container div.right .youtube, #section2 div.container div.right .wrapper {
+    width: 250px;
+    height: 150px;
+    margin-bottom: 2em;
+  }
+}
 
 #section3 div.container {
   display: flex;
@@ -336,38 +351,48 @@ div.container {
   height: 4rem;
 }
 #section3 .img-1 {
-  background: url("../img/higienizacao.png") no-repeat;
+  background: url("../img/higienizacao.webp") no-repeat;
   background-size: contain;
   background-position: center;
 }
 #section3 .img-2 {
-  background: url("../img/polimento.png") no-repeat;
+  background: url("../img/polimento.webp") no-repeat;
   background-size: contain;
   background-position: center;
 }
 #section3 .img-3 {
-  background: url("../img/cristalizacao.png") no-repeat;
+  background: url("../img/cristalizacao.webp") no-repeat;
   background-size: contain;
   background-position: center;
 }
 #section3 .img-4 {
-  background: url("../img/revitalizacao.png") no-repeat;
+  background: url("../img/revitalizacao.webp") no-repeat;
   background-size: contain;
   background-position: center;
 }
 #section3 .img-5 {
-  background: url("../img/estofados.png") no-repeat;
+  background: url("../img/estofados.webp") no-repeat;
   background-size: contain;
   background-position: center;
 }
 #section3 .img-6 {
-  background: url("../img/snow.png") no-repeat;
+  background: url("../img/snow.webp") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#section3 .img-7 {
+  background: url("../img/icone-polimento.webp") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#section3 .img-8 {
+  background: url("../img/icone-vitrificacao.webp") no-repeat;
   background-size: contain;
   background-position: center;
 }
 
 #section4 {
-  background: url("../img/fundo-branco-amarelo.png") no-repeat;
+  background: url("../img/fundo-branco-amarelo.webp") no-repeat;
   background-size: cover;
   background-position: center;
   height: 20em;
@@ -436,25 +461,30 @@ div.container {
   color: black;
 }
 #section4 div.col-right {
-  background: url("../img/mapa.png") no-repeat;
-  background-size: contain;
-  background-position: center;
   position: relative;
-  bottom: 7em;
   width: 500px;
   height: 500px;
+  bottom: 5px;
+  left: 10px;
 }
 @media screen and (max-width: 810px) {
   #section4 div.col-right {
-    bottom: 6em;
-    width: 29em;
-    height: 29em;
+    bottom: auto;
+    width: 20em;
+    height: 20em;
   }
 }
 @media screen and (max-width: 767px) {
   #section4 div.col-right {
     display: none;
   }
+}
+#section4 a {
+  color: white;
+  text-decoration: none;
+}
+#section4 a button {
+  cursor: pointer;
 }
 
 footer {
@@ -529,7 +559,7 @@ footer div.col {
   }
 }
 footer a.logo {
-  background: url("../img/logo-white.png") no-repeat;
+  background: url("../img/logo-white.webp") no-repeat;
   background-size: contain;
   background-position: center;
   display: block;
@@ -584,6 +614,67 @@ footer div.col-5 {
     display: block;
     margin: 0 auto;
   }
+}
+
+/*youtube*/
+.youtube {
+  background-color: #000;
+  margin-bottom: 30px;
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.youtube img {
+  width: 100%;
+  top: -16.82%;
+  left: 0;
+  opacity: 0.7;
+}
+
+.youtube .play-button {
+  width: 90px;
+  height: 60px;
+  background-color: #333;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+
+.youtube .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0 15px 26px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.youtube img,
+.youtube .play-button {
+  cursor: pointer;
+}
+
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+  position: absolute;
+}
+
+.youtube .play-button,
+.youtube .play-button:before {
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  position: absolute;
+}
+
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

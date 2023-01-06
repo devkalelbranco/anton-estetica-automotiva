@@ -317,6 +317,12 @@ div.container{
     .img-6{        
         @include mixins.img('snow.webp');        
     }    
+    .img-7{
+        @include mixins.img('icone-polimento.webp');
+    }
+    .img-8{
+        @include mixins.img('icone-vitrificacao.webp');
+    }
 }
 
 #section4{    
@@ -378,20 +384,28 @@ div.container{
 
     }
     div.col-right{
-        @include mixins.img('mapa.webp');
-        position: relative;
-        bottom: 7em;        
+        position: relative;        
         width: 500px;
         height: 500px;  
+        bottom: 5px;
+        left: 10px;
         @include mixins.tablet{
-            bottom: 6em;        
-            width: 29em;
-            height: 29em;  
+            bottom: auto;        
+            width: 20em;
+            height: 20em;  
         }
         @include mixins.mobile{
             display: none;
         }  
     }
+    a{
+        color: white;
+        text-decoration: none;
+        button{
+            cursor: pointer;
+        }
+    }
+    
 }
 
 footer{
