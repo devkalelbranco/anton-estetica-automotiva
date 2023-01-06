@@ -390,9 +390,10 @@ div.container{
         bottom: 5px;
         left: 10px;
         @include mixins.tablet{
-            bottom: auto;        
-            width: 20em;
-            height: 20em;  
+            // bottom: auto;        
+            // width: 20em;
+            // height: 20em;  
+            display: none;
         }
         @include mixins.mobile{
             display: none;
@@ -406,6 +407,16 @@ div.container{
         }
     }
     
+}
+
+#section5{
+    display: none;
+    @include mixins.mobile{
+        display: flex;
+    }
+    @include mixins.tablet{
+        display: flex;
+    }
 }
 
 footer{
@@ -474,16 +485,17 @@ footer{
     div.col-2{
         margin-left: 2em;
         width: 9em;
-        @include mixins.mobile{            
-            width: 100%;
-            margin: 0;
-            margin-top: 1em;
+        @include mixins.tablet{
+            display: none;
         }
     }
     div.col-3{
         width: 10em;
-        @include mixins.mobile{
+        margin-left: 6em;
+        @include mixins.mobile{            
             width: 100%;
+            margin: 0;
+            margin-top: 1em;
         }
     }    
     div.col-4{        
