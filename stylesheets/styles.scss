@@ -385,8 +385,8 @@ div.container{
     }
     div.col-right{
         position: relative;        
-        width: 500px;
-        height: 500px;  
+        max-width: 500px;
+        max-height: 500px;  
         bottom: 5px;
         left: 10px;
         @include mixins.tablet{
@@ -460,13 +460,42 @@ footer{
             justify-content: center;
             text-align: center;
         }
-    }
+    }    
     div.col{
         margin-top: 1.5em;        
         @include mixins.tablet{
             display: block;            
             margin: 0 auto;
-        }        
+        }                
+        @include mixins.mobile{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            margin-left: 0px;
+            width: 100%;
+        }          
+    }
+    div.facebook{
+        a{
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        a > img{
+            padding: 7px;                
+        }                
+    }
+    div.instagram{
+        a{
+            margin-left: 10px;
+            @include mixins.mobile{
+                margin-left: 0;
+            }
+        }
+        a > img{
+            cursor: pointer;
+            padding: 7px;                
+        }
     }
     a.logo{
         @include mixins.img('logo-white.webp');                        
@@ -480,12 +509,15 @@ footer{
     div.col-1{        
         @include mixins.tablet{
             display: none;
-        }
+        }        
     }
     div.col-2{
         margin-left: 2em;
         width: 9em;
         @include mixins.tablet{
+            display: none;
+        }
+        @include mixins.sm-monitor{
             display: none;
         }
     }
@@ -494,9 +526,12 @@ footer{
         margin-left: 6em;
         @include mixins.mobile{            
             width: 100%;
-            margin: 0;
+            margin-left: 0 !important;            
             margin-top: 1em;
         }
+        @include mixins.sm-monitor{
+            margin-left: 8%;
+        }      
     }    
     div.col-4{        
         width: 20em;
@@ -513,6 +548,10 @@ footer{
             display: block;            
             margin: 0 auto;
         }        
+        @include mixins.sm-monitor{
+            display: block;            
+            margin: 0 auto;
+        }
     }
 }
 
