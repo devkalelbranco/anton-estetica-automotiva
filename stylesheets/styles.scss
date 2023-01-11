@@ -88,7 +88,7 @@ button{
     border: none;
     border-radius: 5px;
     font-size: .8rem;
-
+    cursor: pointer;
     &:hover{
         background-color: variables.$primary-color;
         color: variables.$terciary-color;
