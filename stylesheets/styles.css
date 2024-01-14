@@ -97,11 +97,28 @@ div.container {
   margin-right: auto;
 }
 
+button {
+  background-color: black;
+  color: white;
+  padding: 0.8em;
+  width: 12em;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #FAAE00;
+  color: black;
+}
+
 #section1 {
   background: url("../img/background-section-1.webp") no-repeat;
   background-size: cover;
   background-position: center;
   height: 20em;
+  display: flex;
+  flex-wrap: wrap;
 }
 #section1 div {
   display: flex;
@@ -172,6 +189,34 @@ div.container {
     margin: 0 auto;
     margin-top: -5em;
   }
+}
+#section1 .row-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+  top: -150px;
+}
+@media screen and (max-width: 1194px) {
+  #section1 .row-container {
+    top: -150px;
+  }
+}
+@media screen and (max-width: 810px) {
+  #section1 .row-container {
+    top: -85px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #section1 .row-container {
+    top: -84px;
+  }
+}
+#section1 .break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 #section2 {
@@ -438,17 +483,10 @@ div.container {
 #section4 div.col-left button {
   margin: 0;
   margin-top: 1em;
-  background-color: black;
-  color: white;
-  padding: 0.8em;
   display: flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  width: 12em;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.8rem;
 }
 @media screen and (max-width: 810px) {
   #section4 div.col-left button {
@@ -456,22 +494,16 @@ div.container {
     margin-top: 1em;
   }
 }
-#section4 div.col-left button:hover {
-  background-color: #FAAE00;
-  color: black;
-}
 #section4 div.col-right {
   position: relative;
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
+  max-height: 500px;
   bottom: 5px;
   left: 10px;
 }
 @media screen and (max-width: 810px) {
   #section4 div.col-right {
-    bottom: auto;
-    width: 20em;
-    height: 20em;
+    display: none;
   }
 }
 @media screen and (max-width: 767px) {
@@ -485,6 +517,20 @@ div.container {
 }
 #section4 a button {
   cursor: pointer;
+}
+
+#section5 {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  #section5 {
+    display: flex;
+  }
+}
+@media screen and (max-width: 810px) {
+  #section5 {
+    display: flex;
+  }
 }
 
 footer {
@@ -558,6 +604,35 @@ footer div.col {
     margin: 0 auto;
   }
 }
+@media screen and (max-width: 767px) {
+  footer div.col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    margin-left: 0px;
+    width: 100%;
+  }
+}
+footer div.facebook a {
+  margin-right: 10px;
+  cursor: pointer;
+}
+footer div.facebook a > img {
+  padding: 7px;
+}
+footer div.instagram a {
+  margin-left: 10px;
+}
+@media screen and (max-width: 767px) {
+  footer div.instagram a {
+    margin-left: 0;
+  }
+}
+footer div.instagram a > img {
+  cursor: pointer;
+  padding: 7px;
+}
 footer a.logo {
   background: url("../img/logo-white.webp") no-repeat;
   background-size: contain;
@@ -578,19 +653,30 @@ footer div.col-2 {
   margin-left: 2em;
   width: 9em;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 810px) {
   footer div.col-2 {
-    width: 100%;
-    margin: 0;
-    margin-top: 1em;
+    display: none;
+  }
+}
+@media screen and (max-width: 1194px) {
+  footer div.col-2 {
+    display: none;
   }
 }
 footer div.col-3 {
   width: 10em;
+  margin-left: 6em;
 }
 @media screen and (max-width: 767px) {
   footer div.col-3 {
     width: 100%;
+    margin-left: 0 !important;
+    margin-top: 1em;
+  }
+}
+@media screen and (max-width: 1194px) {
+  footer div.col-3 {
+    margin-left: 8%;
   }
 }
 footer div.col-4 {
@@ -610,6 +696,12 @@ footer div.col-5 {
   display: none;
 }
 @media screen and (max-width: 810px) {
+  footer div.col-5 {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1194px) {
   footer div.col-5 {
     display: block;
     margin: 0 auto;
@@ -675,6 +767,10 @@ footer div.col-5 {
   width: 100%;
   top: 0;
   left: 0;
+}
+
+.location {
+  letter-spacing: -0.5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
